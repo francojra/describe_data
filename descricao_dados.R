@@ -21,10 +21,10 @@ datasets::iris
 ### Verificando a tabela e tipos de variáveis
 tibble(iris)
 
-### Descrever os dados usando pacote DescTools
+### Descrevendo os dados usando pacote DescTools
 iris %>%
   group_by(Species) %>% # Agrupar por espécies
   get_summary_stats(Sepal.Width, type = "mean_sd") # Calcula média e desvio padrão
 
-### Descrever os dados usando pacote psych
+### Descrevendo os dados usando pacote psych
 describeBy(iris$Sepal.Width, group = iris$Sepal.Width) 
