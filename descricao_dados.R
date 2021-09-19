@@ -15,13 +15,16 @@ library(psych) # Função para descrição dos dados: describeBy
 
 # Exemplo ----------------------------------------------------------------------------------------------------------------------------------
 
+### Selecionando o banco de dados
 datasets::iris
 
+### Verificando a tabela e tipos de variáveis
 tibble(iris)
 
-# Usando pacote DescTools
+### Descrever os dados usando pacote DescTools
 iris %>%
   group_by(Species) %>% # Agrupar por espécies
-  get_summary_stats(Sepal.Width, type = "mean_sd")
+  get_summary_stats(Sepal.Width, type = "mean_sd") # Calcula média e desvio padrão
 
-describeBy(dados$ALT_MEDIA, group = dados$TRAT) # package psych 
+### Descrever os dados usando pacote psych
+describeBy(iris$Sepal.Width, group = iris$Sepal.Width) 
